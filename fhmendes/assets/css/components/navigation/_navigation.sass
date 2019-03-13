@@ -1,0 +1,121 @@
+.tcon 
+	width: 45px
+	z-index: 105
+	+mq(600px, max)
+		filter: grayscale(1) invert(1)
+	&.tcon-transform
+		.tcon-menu__lines::after, 
+		.tcon-menu__lines::before
+			background: $blue
+
+
+.mobile-navigation
+	background-color: rgba(0,0,0,.5)
+	+mq(600px, max)
+		background-color: transparent
+	color: $textgray
+	display: none
+	height: 100%
+	right: 0
+	overflow: visible 
+	position: fixed 
+	top: 0
+	z-index: 100
+	width: 100%
+	
+	&.-toggle
+		>div 
+			right: 0%
+	>div 
+		background-color: white
+		@extend .flex 
+		flex-flow: column wrap 
+		justify-content: space-between
+		float: right
+		padding: 45px 30px
+		min-height: 100%
+		position: relative
+		right: -100%
+		+transition(1000ms)
+		width: auto
+		>ul 
+			flex: 1
+			>li 
+				&:not(:last-child)
+					border-bottom: 1px $lightgray solid 
+					margin-bottom: 10px
+					padding-bottom: 10px
+				+rem('font-size', 17px)
+		+mq(568px, max)
+			width: 320px
+		>div
+			>* 
+				&:not(:last-child)
+					margin-bottom: 8px
+		.social-networks
+			margin: 0 -3px
+			>li 
+				display: inline-block 
+				padding: 0 3px
+				vertical-align: middle 
+.navigation
+	>ul 
+		align-items: center 
+		background-color: transparentize($blue, .3)
+		+mq(1118px, max)
+			height: calc(100% - 23px)
+			+mq(600px, max)
+				background-color: transparent
+				height: 100%
+		padding: 25px 15px
+		@extend .flex
+		flex-flow: row wrap 
+		+rem('font-size', 14px)
+		justify-content: space-between
+		+mq(1116px, max)
+			justify-content: flex-end
+		position: relative 
+		text-transform: uppercase
+		&::after 
+			background-color: transparentize($blue, .3)
+			content: ""
+			display: block 
+			height: 100%
+			top: 0
+			position: absolute 
+			right: -100vw
+			width: 100vw
+		>li 
+			color: white
+			&:last-child
+				display: none
+			+mq(1116px, max)
+				&:not(:last-child)
+					display: none 
+				&:last-child
+					display: block
+			&:not(:last-child)
+				&.current_page_item,
+				&.active
+					@extend .btn.btn-2
+				&:hover
+					@extend .btn.btn-2
+					>ul 
+						display: block
+			&:not(:last-child):not(:nth-last-child(2))
+				margin-right: 25px
+			padding: 6px 10px
+			position: relative
+			>ul 
+				background-color: $gray 
+				color: inherit
+				display: none  
+				left: 0
+				position: absolute 
+				top: 100%
+				width: 200%
+				>li 
+					display: block 
+					padding: 6px 10px
+					&:hover
+						background-color: black

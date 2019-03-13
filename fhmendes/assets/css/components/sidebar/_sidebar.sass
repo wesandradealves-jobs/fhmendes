@@ -1,0 +1,77 @@
+.sidebar
+    flex: 0 0 auto 
+    max-width: 590px
+    +mq(1180px, max)
+        max-width: 320px
+        +mq(836px, max)
+            max-width: 100%
+            padding-top: 30px
+            width: 100%
+    width: 100% 
+    >div 
+        &:not(:last-child)
+            border-bottom: 1px $gray solid 
+            padding-bottom: 35px            
+            margin-bottom: 35px
+        strong 
+            display: block 
+            font-weight: bold 
+            margin-bottom: 8px
+    .address-columns
+        align-items: stretch
+        @extend .flex 
+        flex-flow: row wrap
+        justify-content: space-between
+        >*
+            flex: 1
+            &:first-child
+                flex: 0 0 auto 
+                padding-right: 30px
+    .ico 
+        display: block 
+        float: left 
+        padding-right: 6px
+        top: 2px
+    &.-blog
+        border-left: 1px $gray solid 
+        max-width: 249px
+        +mq(836px, max)
+            border-left: 0
+            max-width: 100%
+            padding-left: 0
+        padding-left: 35px    
+        .categorias
+            >li 
+                color: rgba(120,125,133,.5)
+                >a
+                    color: black 
+                    flex: 1       
+        .search-bar
+            >div
+                align-items: center 
+                border: 1px $gray solid
+                @extend .flex 
+                flex-flow: row wrap  
+                >span 
+                    flex: 1
+                    &:last-child
+                        flex: 0 0 auto
+                    input 
+                        background-color: transparent 
+                        color: #787d85
+                        padding: 6px
+                        width: 100%
+                        &[placeholder]
+                            color: #787d85
+                        &::-moz-placeholder
+                            color: #787d85
+                        &::-webkit-input-placeholder
+                            color: #787d85
+                        &:-ms-input-placeholder 
+                            color: #787d85                
+                    button 
+                        background: transparent 
+                        color: #787d85
+                        +rem(('font-size':19px,'line-height':19px))
+                        margin: 0
+                        padding: 0 6px

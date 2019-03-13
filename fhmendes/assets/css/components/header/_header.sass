@@ -1,0 +1,42 @@
+.header
+	left: 0
+	position: absolute
+	top: 0
+	width: 100%
+	z-index: 2
+	&.-sticky
+		background-color: rgba(255,255,255,.9)
+		height: 137px
+		left: 0
+		position: fixed
+		top: -100%
+		+transition(500ms)
+		width: 100%
+		z-index: 10
+		&.-stuck 
+			top: 0 
+	.container
+		align-items: flex-start
+		+mq(1118px, max)
+			align-items: stretch
+		@extend .flex
+		justify-content: space-between
+		.contact
+			align-items: center
+			@extend .flex
+			+mq(600px, max)
+					display: none 
+			flex-flow: row wrap 
+			justify-content: space-between
+			.social-networks
+				padding-right: 15px
+			>p
+				display: block
+				text-align: right 
+				>span
+					background-color: $lightgray
+					color: $blue 
+					display: inline-block
+					+rem('font-size', 15px)
+					padding: 5px 15px
+					text-align: center 

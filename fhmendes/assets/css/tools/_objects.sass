@@ -1,0 +1,436 @@
+html,
+body 
+    background-color: whitesmoke
+
+textarea,
+input
+    &[placeholder]
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-moz-placeholder
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-webkit-input-placeholder
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &:-ms-input-placeholder 
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+
+.flex  
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex    
+
+.container
+    display: block
+    max-width: 1170px
+    margin: 0 auto
+    padding-left: 15px
+    padding-right: 15px
+
+#wrap
+    @extend .flex 
+    flex-flow: column wrap 
+    justify-content: flex-start
+    min-height: 100vh
+    overflow: hidden
+    width: 100%
+    .main 
+        flex: 1
+        position: relative
+        width: inherit
+        z-index: 1
+
+.logo 
+    img,svg
+        display: block
+        height: auto
+        max-height: 137px
+        max-width: 100%
+
+.btn 
+    display: block 
+    padding: 6px 12px
+    +rem('font-size', 14px)
+    &.btn-1 
+        background-color: $lightblue 
+        color: white 
+    &.btn-2
+        background-color: $gray
+        +border(0px !important)
+        color: white        
+
+h3
+    align-items: center
+    @extend .flex 
+    flex-flow: row wrap 
+    justify-content: space-between
+    margin-bottom: 15px
+    &::after,
+    &::before 
+        background-color: $gray 
+        content: ''
+        flex: 1
+        height: 1px 
+    span 
+        color: $gray 
+        flex: 0 0 auto
+        +rem('font-sie', 14px) 
+        padding: 0 15px
+        text-transform: uppercase
+h4,
+h6,
+h5
+    color: $blue
+    +rem('font-size', 34px)
+    margin-bottom: 35px
+h6
+    +rem('font-size', 25px)
+h4
+    +rem('font-size', 19px)
+    margin-bottom: 25px
+.banner
+    background-size: cover 
+    background-position: center 0 
+    background-repeat: no-repeat        
+    background-attachment: fixed
+    .banner-slider
+        height: 100%
+        left: 0
+        position: absolute
+        top: 0
+        width: 100%
+        z-index: 1     
+        .owl-stage-outer
+            height: inherit
+            .owl-stage
+                height: inherit   
+                .owl-item
+                    height: inherit
+                    .item 
+                        background-size: cover 
+                        background-position: center 0 
+                        background-repeat: no-repeat
+                        background-attachment: fixed
+                        height: inherit
+        .owl-nav,.owl-dots
+            display: none
+    .container
+        color: white 
+        +rem('font-size', 52px)
+        padding-top: 150px
+        position: relative
+        padding-bottom: 150px
+        text-align: center
+        z-index: 2
+    &:not(.-archive)
+        // &::after 
+        //     background-color: rgba(0,0,0,.35)
+        //     content: ""
+        //     display: block 
+        //     height: 100%
+        //     left: 0
+        //     position: absolute
+        //     top: 0
+        //     width: 100%
+        //     z-index: 1
+        .container
+            z-index: 2
+    &.-archive
+        background-image: none 
+        background-color: white
+        box-shadow: inset 0 5px 21px -11px #000
+        .container
+            color: $gray
+            +rem('font-size', 20px)
+            padding-top: 30px
+            padding-bottom: 30px
+            text-align: left
+.columns
+    .container
+        align-items: stretch
+        @extend .flex 
+        flex-flow: row wrap 
+        justify-content: space-between
+        padding-top: 60px 
+        padding-bottom: 60px
+        .content
+            flex: 1
+            padding-right: 30px
+            width: 100%
+            +mq(836px, max)
+                padding-right: 0
+p 
+    color: $textgray
+.forms
+    >span,
+    >div
+        display: block 
+        &:not(:last-child)
+            margin-bottom: 10px
+        >label,
+        >input 
+            color: $textgray
+            display: block 
+            +rem('font-size', 17px)
+            width: 100%
+        >label
+            margin-bottom: 8px
+        >input,
+        >textarea 
+            border: 1px $lightgray solid 
+            overflow: hidden
+            max-height: 90px
+            padding: 6px
+            resize: none
+            width: 100%
+            &[placeholder]
+                color: $gray
+            &::-moz-placeholder
+                color: $gray
+            &::-webkit-input-placeholder
+                color: $gray
+            &:-ms-input-placeholder 
+                color: $gray
+            &:focus
+                +shadow(0,1px,3px,-2px,#000)
+        >.btn 
+            +border(8px)
+            +rem('font-size', 22px)
+            padding: 6px 12px 
+.date
+    align-items: center
+    background-color: white 
+    @extend .flex 
+    flex-flow: column wrap 
+    height: 68px
+    justify-content: center 
+    +border(999px)
+    margin: 10px
+    position: absolute
+    right: 0 
+    text-align: center
+    top: 0
+    width: 68px
+    z-index: 2
+    >span
+        +rem('font-size', 22px)
+        font-weight: bold
+        >span 
+            display: block
+            border-bottom: 2px $blue solid 
+            margin-bottom: 3px
+            padding-bottom: 3px 
+            text-transform: uppercase
+            +rem('font-size', 12px)
+.post-thumbnail
+    background-size: cover 
+    background-position: center 0 
+    background-repeat: no-repeat       
+    display: block 
+    margin-bottom: 25px
+    padding: 0 0 45%
+    position: relative
+    &.procedimentos
+        float: left
+        margin-right: 15px
+        margin-bottom: 15px
+        padding: 0 0 25%
+        width: 35%
+        +mq(640px, max)
+            margin-right: 0
+            padding: 0 0 45%
+            width: 100%    
+.artigos-recentes,
+.categorias
+    >li 
+        align-items: center 
+        @extend .flex 
+        flex-flow: row wrap 
+        justify-content: space-between           
+        &:not(:last-child)
+            margin-bottom: 15px
+        &:hover
+            a 
+                color: $blue          
+.artigos-recentes
+    &.-relacionados
+        align-items: stretch 
+        @extend .flex 
+        flex-flow: row wrap 
+        justify-content: space-between          
+        >li 
+            flex: 0 0 auto 
+            width: 50%
+            +mq(640px, max)
+                width: 100%
+            >div 
+                &[style]
+                    +border(0px)
+                    height: 79px
+                    width: 110px
+    >li 
+        >div 
+            &[style]
+                background-size: cover 
+                background-position: center 0 
+                background-repeat: no-repeat   
+                flex: 0 0 auto                       
+                +border(999px)
+                height: 40px 
+                width: 40px
+                &+div 
+                    flex: 1
+                    padding-left: 15px
+                    >a,>small 
+                        display: block
+                    >a 
+                        +rem('font-size', 19px)
+                    >small 
+                        margin-top: 8px
+                        +rem('font-size', 12px)
+.single-navigation
+    border-top: 1px $gray solid 
+    border-bottom: 1px $gray solid 
+    align-items: center
+    @extend .flex 
+    flex-flow: row wrap 
+    margin: 45px auto
+    padding: 30px 0
+    justify-content: space-between
+    >li 
+        align-items: center
+        @extend .flex 
+        flex-flow: row wrap 
+        justify-content: space-between
+        &:last-child
+            text-align: right
+        >a 
+            color: $blue
+            flex: 1
+            +rem('font-size', 22px)
+            +mq(836px, max)
+                +rem('font-size', 16px)
+                +mq(400px, max)
+                    +rem('font-size', 13px)
+            max-width: 246px
+            >small 
+                display: block 
+                +rem('font-size', 12px)
+                +mq(836px, max)
+                    +rem('font-size', 10px)
+                margin-bottom: 6px
+                text-transform: uppercase
+        > i 
+            color: transparentize($blue, .5)
+            +mq(836px, max)
+                display: none
+            +rem(('font-size':36px,'line-height':36px))
+            text-align: center 
+            width: 40px
+.inner-session-title
+    text-align: center
+    +mq(640px, max)
+        +rem('font-size', 22px)
+    span 
+        display: block 
+        width: 100%
+    &::after 
+        background-color: $blue
+        content: ""
+        display: block 
+        height: 3px
+        margin: 10px auto
+        width: 80px
+.zoom-thumb
+    background-size: cover 
+    background-position: center 0 
+    background-repeat: no-repeat     
+    display: block 
+    height: 100%                  
+    left: 0
+    position: absolute 
+    +transition(1000ms)
+    transform: scale(1.0)
+    top: 0
+    width: 100%
+    z-index: 1
+*:hover
+    >.zoom-thumb
+        transform: scale(1.2)        
+.leia-mais
+    i 
+        display: inline-block 
+        font-style: initial
+        +rem('font-size', 13px)
+        vertical-align: middle
+
+[hidden]
+    display: none !important
+
+#spinner
+    background: url(https://cdn.dribbble.com/users/172519/screenshots/3520576/dribbble-spinner-800x600.gif) center center no-repeat rgba(255,255,255,.8)
+    display: none
+    height: 100%
+    left: 0
+    position: absolute 
+    top: 0
+    width: 100%
+    z-index: 999
+
+.social-networks
+    margin: 0 -3px
+    >li 
+        display: inline-block 
+        padding: 0 3px
+        vertical-align: middle 
+
+.accordion
+    .fa
+        color: black 
+        display: inline-block 
+        padding: 0 4px
+        vertical-align: middle
+    &.toggle
+        .fa
+            color: $lightblue
+            transform: rotate(180deg)
+.galeria 
+    border-top: 1px gray solid 
+    padding-top: 25px
+    margin: 25px auto 0
+    max-width: 855px
+    overflow: hidden 
+    .owl-stage
+        align-items: stretch
+        @extend .flex 
+        flex-flow: row wrap 
+        .owl-item
+            flex: 1
+            height: 120px
+            .item
+                background-size: cover 
+                background-position: center center
+                background-repeat: no-repeat
+                display: block
+                height: 100%
+                width: 100%
+    img 
+        width: 100%
+    .owl-nav 
+        [class*=owl-]
+            background: transparent!important
+            color: $blue !important
+            +rem('font-size', 22px)
+            margin: 0 15px
+            padding: 0

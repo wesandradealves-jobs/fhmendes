@@ -1,0 +1,116 @@
+.footer
+    &-logos 
+        align-items: center 
+        @extend .flex 
+        flex-flow: row wrap
+        margin-bottom: 35px 
+        justify-content: center 
+        img 
+            max-height: 80px
+            width: auto
+        >div 
+            margin: 0 8px
+    #footer
+        color: $textgray
+        +rem('font-size', 12px)
+        padding: 30px 15px
+        .container
+            align-items: flex-start
+            @extend .flex 
+            flex-flow: row wrap
+            +mq(640px, max)
+                flex-flow: column wrap
+            justify-content: space-between
+            >div 
+                &.address_row
+                    @extend .flex
+                    flex-flow: row wrap 
+                    +mq(640px, max)
+                        flex-flow: column wrap
+                    flex: 1
+                    >strong 
+                        flex: 0 0 auto 
+                        width: 100%
+                    .address_item
+                        flex: 1
+                        &:not(:last-of-type)
+                            padding-right: 15px
+                            +mq(640px, max)
+                                padding-right: 0
+                        p, img 
+                            display: block
+                &:first-of-type
+                    padding-left: 0
+                    width: 33.333%
+                    +mq(640px, max)
+                        width: 100%
+                &:last-of-type
+                    padding-right: 0
+                &.facebook-wrap,
+                &.googleMap-wrap
+                    flex: 0 0 auto 
+                    width: 500px
+                    +mq(1180px, max)
+                        width: 100%
+                &.facebook-wrap
+                    .facebook
+                        border: 1px $gray solid
+                        +mq(1180px, max)
+                            border: 0
+                    max-height: 250px
+                    overflow-y: auto
+                    overflow-x: hidden
+                    width: 300px
+                    +mq(1180px, max)
+                        max-height: initial
+                        overflow: hidden
+                        width: 100%
+                flex: 0 0 auto
+                padding: 0 15px
+                +mq(1180px, max)
+                    padding: 0 0 30px
+                    &:last-child
+                        padding-bottom: 0
+                +mq(1180px, max)
+                    flex: 0 0 auto 
+                    width: 100%
+                .map
+                    border: 1px $gray solid
+                    display: block
+                    height: 250px
+                    margin-bottom: 25px
+                strong 
+                    display: block
+                    +rem('font-size', 16px)
+                    font-weight: bold
+                    margin-bottom: 10px 
+                    text-transform: uppercase 
+                nav 
+                    ul 
+                        li 
+                            display: block 
+                            text-transform: uppercase 
+                            &:not(:last-child)
+                                margin-bottom: 7.5px
+                            >ul 
+                                display: block 
+                                margin-top: 7.5px
+                                >li 
+                                    font-weight: bold
+    .copyright,
+    .stamps
+        text-align: center 
+        text-transform: uppercase  
+    .copyright
+        +rem('font-size', 11px)
+    .stamps
+        padding: 7.5px 0
+        >a 
+            background-color: $gray
+            +border(999px)
+            color: $lightgray
+            display: inline-block
+            +rem('font-size', 10px)
+            margin: 0 7.5px
+            padding: 4px 6px
+    

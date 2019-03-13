@@ -1,0 +1,137 @@
+.feed
+    &.-archive
+        align-items: stretch 
+        @extend .flex 
+        flex-flow: row wrap
+        justify-content: flex-start
+        margin: 0 -15px -30px 
+        >li 
+            flex: 0 0 auto 
+            padding: 0 15px 30px
+            text-align: center
+            width: 33.333%
+            +mq(836px, max)
+                width: 50%
+                +mq(568px, max)
+                    width: 100%
+            >div 
+                background-color: white
+                @extend .flex
+                flex-flow: column wrap 
+                justify-content: space-between 
+                padding: 15px
+                height: 100%
+                width: 100%
+                >h2 
+                    flex: 1
+                >div
+                    @extend .flex
+                    flex-flow: column wrap 
+                    justify-content: space-between
+                    &[style]
+                        background-size: cover 
+                        background-position: center 0 
+                        background-repeat: no-repeat   
+                        flex: 0 0 auto
+                        margin: -15px -15px 15px
+                        overflow: hidden
+                        position: relative
+                        height: 192px             
+                >p 
+                    flex: 1           
+                    padding: 15px 0
+    &.-simple-feed
+        >li 
+            >div
+                &[style]
+                    background-size: cover 
+                    background-position: center 0 
+                    background-repeat: no-repeat   
+                    flex: 0 0 auto
+                    overflow: hidden
+                    position: relative
+                    height: 163px
+                    width: 245px
+                    &+div 
+                        @extend .flex
+                        flex-flow: column wrap 
+                        justify-content: space-between
+                        flex: 1
+                        padding-left: 15px
+                        .title 
+                            margin-bottom: 0
+                            >a,>.tags 
+                                display: block
+                            >.tags
+                                >li 
+                                    color: transparentize($textgray, .5)
+                                    display: inline-block 
+                                    +rem('font-size', 14px)
+                                    vertical-align: middle
+                                    &:not(:last-child)
+                                        &:hover
+                                            color: lightblue
+                                            text-decoration: underline
+                                    &:not(:last-child):not(:nth-last-child(2))
+                                        &::after
+                                            content: " , "
+                                            display: inline-block
+                                            padding-right: 6px
+                                            vertical-align: baseline 
+                                    &:last-child 
+                                        color: black
+                                        font-weight: bold
+                                    &:nth-last-child(2) 
+                                        &::after
+                                            content: " - "
+                                            display: inline-block
+                                            padding: 0 6px
+                                            vertical-align: middle
+                        .description
+                            flex: 1
+                            +rem(('font-size':19px,'line-height':24px))
+                            padding-bottom: 15px
+            &:not(:last-child)
+                border-bottom: 1px $gray solid
+                margin-bottom: 45px
+                padding-bottom: 25px            
+    >li 
+        align-items: stretch
+        @extend .flex 
+        flex-flow: row wrap 
+        justify-content: space-between
+
+.pagination
+    align-items: flex-end
+    @extend .flex 
+    flex-flow: row wrap   
+    justify-content: center   
+    margin-top: 60px
+    >li 
+        color: $blue
+        display: inline-block 
+        font-weight: bold
+        +rem(('font-size':19px, 'line-height':19px))
+        padding: 0 7.5px
+        position: relative
+        text-align: inherit
+        vertical-align: middle      
+        &::after
+            background-color: $blue 
+            content: ""
+            display: none
+            height: 2px
+            left: 0
+            position: absolute 
+            top: calc(100% + 10px)
+            width: 100%  
+        &.active::after
+            display: block
+        .prev 
+            display: block 
+            position: relative
+            transform: rotate(180deg)
+            transform-origin: center center 
+        .prev,
+        .next
+            +rem('line-height', 1)

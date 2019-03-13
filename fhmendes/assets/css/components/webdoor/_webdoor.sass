@@ -1,0 +1,68 @@
+.webdoor
+	.owl-wrapper
+		overflow: hidden
+		width: calc(100% + 200px)	
+		z-index: 1
+		.item
+			background-size: cover
+			background-position: center bottom
+			background-repeat: no-repeat
+			height: 800px
+			overflow: hidden
+			+mq(1080px, max)
+				height: 80vw
+			&::after 
+				background: -webkit-linear-gradient(top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 100%)
+				background: -webkit-gradient(linear,left top, left bottom,color-stop(0, rgba(0,0,0,.8)),to(rgba(0,0,0,0)))
+				background: -o-linear-gradient(top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 100%)
+				background: linear-gradient(to bottom,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 100%)
+				content: ""
+				display: block
+				height: 50%
+				left: 0
+				position: absolute
+				top: 0
+				width: 100%
+				z-index: 1
+			>a
+				display: block
+				height: 100% 
+				left: 0
+				position: absolute
+				top: 0
+				width: 100%
+				z-index: 2
+
+	.owl-thumbs
+		align-items: stretch
+		@extend .flex
+		+mq(640px, max)
+			display: none
+		flex-flow: row wrap 
+		margin: -180px -15px 0
+		+mq(1080px, max)
+			margin: -15vw -15px 0
+		justify-content: space-between
+		z-index: 2
+		>a 
+			flex: 1
+			height: 250px
+			+mq(1080px, max)
+				height: 22vw
+			padding: 0 30px
+			+mq(1080px, max)
+				padding: 0 5px
+			>span
+				border: 8px white solid
+				+shadow(0,0,20px,-5px,black) 
+				background-size: cover 
+				background-position: center center 
+				background-repeat: no-repeat 
+				display: block
+				filter: grayscale(1) 
+				height: 100%
+				width: 100%
+			&:hover,
+			&.-active
+				>span
+					filter: none

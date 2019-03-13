@@ -1,0 +1,114 @@
+.pg-home
+	.header
+		.container
+			.contact
+				.social-networks
+					color: white
+.dr-flavio
+	.container
+		align-items: stretch
+		@extend .flex 
+		flex-flow: row wrap 
+		justify-content: space-between
+		padding-top: 45px
+		padding-bottom: 45px
+		>div 
+			&[style]
+				background-size: cover 
+				background-position: center center 
+				background-repeat: no-repeat
+				flex: 0 0 auto  
+				+mq(640px, max)
+					display: none
+				min-height: 350px
+				width: 260px
+				&+div 
+					@extend .flex 
+					flex-flow: column wrap 
+					justify-content: space-between
+					flex: 1
+					padding-left: 30px
+					+mq(640px, max)
+						padding-left: 0
+					>h2 
+						color: $lightblue
+					>p 
+						padding: 15px 0
+						flex: 1
+.procedimentos
+	background-color: white 
+	.container
+		padding-top: 30px 
+		padding-bottom: 30px
+		.procedimento
+			align-items: stretch
+			@extend .flex 
+			flex-flow: row wrap 
+			justify-content: space-between
+			margin: 0 -15px
+			+mq(640px, max)
+				margin: 0 -15px -30px
+			>li 
+				cursor: pointer
+				flex: 1
+				min-height: 300px
+				padding: 0 15px 
+				+mq(840px, max)
+					margin-bottom: 30px
+					flex: 0 0 auto 
+					width: 33.333%
+					+mq(640px, max)
+						width: 50%
+						+mq(400px, max)
+							width: 100%
+				>div
+					align-items: center
+					background-size: cover 
+					background-position: center center 
+					background-repeat: no-repeat
+					@extend .flex 
+					flex-flow: column wrap 
+					justify-content: flex-end 
+					height: 100%
+					width: 100%
+					&::after 
+						background-color: transparentize($purple, .2)
+						content: ""
+						display: block 
+						height: 100%
+						position: absolute
+						width: 100%
+						z-index: 2 
+					>h4 
+						+mq(840px, max)
+							background-color: transparentize($lightblue, .3)
+						color: white
+						@extend .flex 
+						flex-flow: column wrap
+						height: 100%
+						justify-content: flex-end 
+						+rem(('font-size':18px,'letter-spacing':1px))
+						margin: 0
+						padding: 15px
+						text-transform: uppercase 
+						text-align: center
+						width: 100%
+						z-index: 1
+						>span
+							bottom: -60px
+							opacity: 0 
+							+mq(840px, max)
+								bottom: 0
+								opacity: 1
+							position: relative  
+							+transition(500ms)
+				&:hover,
+				&.-active 
+					>div 
+						&::after 
+							display: none
+						>h4 
+							background-color: transparentize($lightblue, .3)
+							>span 
+								bottom: 0 
+								opacity: 1
